@@ -15,4 +15,11 @@ resource "aws_db_instance" "defaut" {
     vpc_security_group_ids = [aws_security_group.rds.id]
     domain                 = lookup(local.db_domain_info, "domain")
     domain_iam_role_name   = lookup(local.db_domain_info, "domain_iam_role_name")
+
+    tags = merge(
+        local.common_tags,
+        {
+            #key = value
+        },
+    )
 }
