@@ -44,6 +44,12 @@ variable "db_username" {
   sensitive   = true
 }
 
+variable "db_password" {
+  type        = string
+  description = "Senha do usuário root no banco de dados"
+  sensitive   = true
+}
+
 variable "domain" {
   type        = string
   description = "ID do Directory Active Directory para inscluir a instância no domínio"
